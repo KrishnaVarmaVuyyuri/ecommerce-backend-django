@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     "products",
     "rest_framework",
     "corsheaders",
+    "cloudinary",
+    "cloudinary_storage",
+    "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
