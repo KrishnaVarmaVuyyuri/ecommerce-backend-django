@@ -123,8 +123,14 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Media files (Cloudinary)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dfennoqt2",
+    "API_KEY": "836446394653882",
+    "API_SECRET": "ziU90GJuGdaEROArDLzv6tmAP8I",
+}
 
 # Use Cloudinary for media storage
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
