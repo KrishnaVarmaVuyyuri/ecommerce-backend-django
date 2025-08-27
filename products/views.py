@@ -2,7 +2,7 @@ from rest_framework import viewsets, permissions
 from .models import Product
 from .serializers import ProductSerializer
 
-# 👉 Allow safe (GET) requests for everyone, write access for admins
+# Custom permission (read allowed for all, write for admins only)
 class IsAdminOrReadOnly(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
@@ -14,3 +14,4 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.order_by("-created_at")
     serializer_class = ProductSerializer
     permission_classes = [IsAdminOrReadOnly]
+    authentication_classes = []  
